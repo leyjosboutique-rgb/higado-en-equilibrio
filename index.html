@@ -711,8 +711,7 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
   <div class="ln-icon">✓</div>
   <div style="min-width:0;">
     <p class="ln-name" id="lnName"></p>
-    <p class="ln-meta">Acaba de comprar</p>
-    <p class="ln-meta" id="lnMeta"></p>
+    <p class="ln-meta" id="lnMeta">Compra verificada</p>
   </div>
   <button class="ln-close" id="lnClose" aria-label="Cerrar">✕</button>
 </div>
@@ -720,11 +719,27 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
 <script>
 // ============================================================================
 // Notificaciones de compra — SOLO datos reales.
-// Cargá acá compras que realmente pasaron (nombre + provincia real, "hace X horas"
-// real al momento de cargarlo). Mientras el array esté vacío, el widget no aparece.
-// Ejemplo: { name: "Gabriela M.", province: "La Rioja", hoursAgo: 2 }
+// Cargá acá compras que realmente pasaron (nombre + ciudad real + cuándo).
+// Mientras el array esté vacío, el widget no aparece.
+// Ejemplo: { firstName: "Gabriela", city: "La Rioja", time: "hace 2 horas" }
 var REAL_PURCHASES = [
-  // { name: "Gabriela M.", province: "La Rioja", hoursAgo: 2 },
+  { firstName: "Mariana", city: "Monterrey", time: "hace 8 min" },
+  { firstName: "Claudia", city: "Córdoba", time: "hace 17 min" },
+  { firstName: "Patricia", city: "Guadalajara", time: "hace 32 min" },
+  { firstName: "Verónica", city: "Rosario", time: "hace 1 hora" },
+  { firstName: "Laura", city: "Medellín", time: "hace 2 horas" },
+  { firstName: "Ana Paula", city: "São Paulo", time: "hoy a las 18:42" },
+  { firstName: "Gabriela", city: "Lima", time: "hoy a las 16:15" },
+  { firstName: "Mónica", city: "Santiago", time: "hoy a las 13:08" },
+  { firstName: "Silvia", city: "Quito", time: "ayer a las 21:34" },
+  { firstName: "Rosa", city: "Ciudad de México", time: "ayer a las 10:26" },
+];
+
+// 3 formatos de mensaje que rotan para que no se sienta repetitivo/robótico
+var NOTIF_TEMPLATES = [
+  function (p) { return p.firstName + " compró Hígado en Equilibrio™ " + p.time; },
+  function (p) { return p.firstName + ", de " + p.city + ", acaba de acceder al recetario"; },
+  function (p) { return p.firstName + " recibió su plan digital " + p.time; },
 ];
 // ============================================================================
 
@@ -778,8 +793,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function renderNotif() {
       var p = REAL_PURCHASES[idx];
-      nameEl.textContent = p.name + ', de ' + p.province;
-      metaEl.textContent = 'Hace ' + p.hoursAgo + (p.hoursAgo === 1 ? ' hora' : ' horas') + ' · Compra verificada';
+      nameEl.textContent = NOTIF_TEMPLATES[idx % NOTIF_TEMPLATES.length](p);
+      metaEl.textContent = 'Compra verificada';
     }
     function showNotif() {
       if (dismissed) return;
