@@ -27,14 +27,16 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,500;0,600;0,700;0,800;0,900;1,600;1,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   * { box-sizing: border-box; }
-  body { margin: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: #2c2a27; background:#fff; }
+  html { overflow-x: hidden; }
+  body { margin: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: #2c2a27; background:#fff; overflow-x: hidden; }
   .accent { color: #b9601b; }
   .accent-italic { color: #f7b733; font-style: italic; font-family:'Bodoni Moda', serif; font-weight: 700; }
-  h1, h2 { font-family: 'Bodoni Moda', Georgia, serif; margin: 0 0 18px; font-weight: 700; letter-spacing: -0.3px; line-height: 1.15; }
+  h1, h2 { font-family: 'Bodoni Moda', Georgia, serif; margin: 0 0 18px; font-weight: 700; letter-spacing: -0.3px; line-height: 1.15; text-align: center; }
   h1 { font-size: 46px; }
-  @media (min-width: 701px) { h1 { font-size: 52px; } }
+  @media (min-width: 701px) { h1 { font-size: 52px; } .solution-title { text-align: left; } }
   h2 { font-size: 34px; color: #201d18; }
   .section-dark h2, .section-dark h1 { color: #fff; }
+  .solution-title { text-align: center; }
 
   .topbar {
     background: linear-gradient(90deg, #1d4527 0%, #2d6b3c 50%, #1d4527 100%);
@@ -119,20 +121,35 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
   .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
   .solution-grid { display:grid; grid-template-columns: 0.9fr 1.1fr; gap:44px; align-items:center; }
   .solution-grid .mockup-frame { max-width: 320px; }
+  .emily-card { display:flex; gap:26px; align-items:flex-start; flex-wrap:wrap; }
+  .emily-card img { flex:0 0 150px; }
   @media (max-width: 700px) {
     .grid2, .grid3 { grid-template-columns: 1fr; }
-    h1{font-size:30px;} h2{font-size:26px;} .section{padding:54px 14px;}
-    .content-row2 { flex-direction: column; }
-    .content-row2 img, .content-bonus2 img { width:100%; flex-basis:auto; height:170px; }
-    .guarantee-card { padding:32px 20px 26px; }
+    h1{font-size:28px;} h2{font-size:24px;} .section{padding:44px 16px;}
+    .topbar { letter-spacing: 2px; font-size: 11px; padding: 12px 10px; }
+    .btn { width: 100%; max-width: 320px; font-size: 15.5px; padding: 16px 22px; }
+    .price-new { font-size: 38px; }
+    .price-old { font-size: 14px; }
+    .emily-card { flex-direction: column; align-items: center; text-align: center; }
+    .emily-card > div { text-align: left; }
+    .content-row2 img, .content-bonus2 img { flex:0 0 38%; width:38%; height:auto; }
+    .content-row2-body { padding:14px 16px; }
+    .content-row2-body b { font-size:16px; }
+    .content-row2-body p { font-size:12.5px; }
+    .guarantee-card { padding:28px 18px 24px; }
+    .guarantee-shield { width: 68px; height: 74px; margin: 20px auto 6px; }
+    .guarantee-shield svg { width: 68px; height: 74px; }
     .guarantee-strip { flex-wrap:wrap; gap:14px 0; }
+    .testi-card { padding: 22px 18px 18px; }
     .pain-row { padding:16px 16px; gap:12px; }
     .pain-num { flex-basis:40px; width:40px; height:40px; font-size:16px; }
     .lov-row2 { gap:12px; }
-    .hero-grid { max-width: 360px; }
-    .solution-grid { grid-template-columns: 1fr; text-align:center; }
+    .hero-grid { max-width: 340px; gap: 8px; }
+    .solution-grid { grid-template-columns: 1fr; text-align:center; gap: 24px; }
     .solution-grid .mockup-frame { max-width: 240px; margin: 0 auto 8px; }
     .solution-grid > div:last-child { text-align: left; }
+    .countdown { grid-template-columns: repeat(2, 60px); }
+    footer { padding: 24px 16px; font-size: 11.5px; }
   }
 
   .pain-item, .benefit-item {
@@ -365,13 +382,13 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
 <!-- 3. PRESENTACIÓN DEL PRODUCTO -->
 <!-- ============================================= -->
 <section class="section section-white">
-  <div class="wrap-wide reveal solution-grid" style="text-align:left; max-width:1020px;">
+  <div class="wrap-wide reveal solution-grid" style="max-width:1020px;">
     <div class="mockup-frame" style="background:none; border:none;">
       <img src="mockup-producto.webp" width="700" height="874" alt="Ebook Hígado en Equilibrio mostrado en tablet, 60 recetas simples para cuidar tu hígado" loading="lazy" style="width:100%; height:100%; object-fit:cover; border-radius:18px; box-shadow:0 24px 50px rgba(30,25,15,0.22);">
     </div>
     <div>
       <div class="label">La solución</div>
-      <h2 style="text-align:left;">No es otra dieta. <span class="accent-italic">Es el plan que faltaba.</span></h2>
+      <h2 class="solution-title">No es otra dieta. <span class="accent-italic">Es el plan que faltaba.</span></h2>
       <p style="font-size:16px; line-height:1.7; color:#4a433b; margin-bottom:20px;">
         Todos saben que hay que "comer bien" para cuidar el hígado. Pero casi nadie te explica qué significa eso en tu plato, comida por comida. <b>Hígado en Equilibrio</b> es exactamente eso: un recetario creado por una nutricionista, con 60 recetas organizadas para que sepas qué cocinar hoy — sin improvisar y sin gastar de más.
       </p>
@@ -396,8 +413,8 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
     <h2>Nutricionista <span class="accent-italic">Emily Carter</span></h2>
   </div>
   <div class="wrap-wide reveal" style="max-width:700px;">
-    <div class="card" style="padding:32px; text-align:left; display:flex; gap:26px; align-items:flex-start; flex-wrap:wrap;">
-      <img src="emily-carter.webp" width="320" height="320" alt="Nutricionista Emily Carter" loading="lazy" style="width:150px; height:150px; border-radius:999px; flex:0 0 150px; object-fit:cover; box-shadow:0 10px 24px rgba(30,25,15,0.18); border:3px solid #fff;">
+    <div class="card emily-card" style="padding:32px; text-align:left;">
+      <img src="emily-carter.webp" width="320" height="320" alt="Nutricionista Emily Carter" loading="lazy" style="width:150px; height:150px; border-radius:999px; object-fit:cover; box-shadow:0 10px 24px rgba(30,25,15,0.18); border:3px solid #fff;">
       <div style="flex:1; min-width:260px;">
         <p style="font-size:16px; line-height:1.75; color:#3f3a34;">
           Emily Carter es Licenciada en Nutrición, con <span style="color:#b9601b; font-weight:700;">+15 años</span> de experiencia en consulta clínica.
@@ -408,7 +425,7 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
         <p style="font-size:16px; line-height:1.75; color:#3f3a34;">
           Ese fue el punto de partida de este recetario. No una dieta genérica bajada de internet — un plan pensado desde la práctica clínica, comida por comida, para que dejes de improvisar.
         </p>
-        <p style="font-size:15px; color:#4a433b; font-style:italic; line-height:1.7; border-left:3px solid #e79a3d; padding-left:14px; margin-top:16px;">"Durante años vi a muchas personas salir de una consulta sabiendo todo lo que debían evitar, pero sin tener claro qué cocinar al día siguiente. Por eso creé este recetario: para transformar recomendaciones confusas en comidas reales, sencillas y sostenibles. Porque cuidar tu alimentación no debería sentirse como un castigo, sino como un plan que sí podés llevar a tu vida."<br><span style="font-style:normal; font-weight:700; color:#1d4527;">— Emily</span></p>
+        <p style="font-family:'Bodoni Moda', serif; font-style:italic; font-size:17px; line-height:1.7; color:#b9601b; background:linear-gradient(135deg,#fff3e2,#fce8d4); border-left:4px solid #e79a3d; border-radius:0 12px 12px 0; padding:18px 20px; margin-top:20px;">"Durante años vi a muchas personas salir de una consulta sabiendo todo lo que debían evitar, pero sin tener claro qué cocinar al día siguiente. Por eso creé este recetario: para transformar recomendaciones confusas en comidas reales, sencillas y sostenibles. Porque cuidar tu alimentación no debería sentirse como un castigo, sino como un plan que sí podés llevar a tu vida."<br><span style="font-style:normal; font-weight:700; color:#1d4527; font-family:'Inter',sans-serif; font-size:14px;">— Emily</span></p>
       </div>
     </div>
   </div>
@@ -658,7 +675,7 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
 <!-- ============================================= -->
 <footer>
   © 2026 Hígado en Equilibrio. Todos los derechos reservados.<br>
-  El contenido de esta página es de carácter informativo y educativo, creado con base en nutrición clínica. No reemplaza el diagnóstico ni el tratamiento médico profesional. Consultá con tu médico antes de realizar cambios en tu alimentación.<br>
+  Contenido informativo, no reemplaza diagnóstico médico. Consultá a tu médico antes de cambiar tu alimentación.<br>
   <a href="#">Términos y Condiciones</a> · <a href="#">Política de Privacidad</a> · <a href="#">Contacto</a>
 </footer>
 
