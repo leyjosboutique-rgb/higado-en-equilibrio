@@ -146,6 +146,10 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
     .guarantee-shield svg { width: 68px; height: 74px; }
     .guarantee-strip { flex-wrap:wrap; gap:14px 0; }
     .testi-card { padding: 22px 18px 18px; }
+    .testi-carousel { padding: 4px 22vw 4px 4px; gap: 12px; }
+    .testi-carousel .testi-card { flex: 0 0 84%; }
+    .testi-dots { display: flex; }
+    .testi-swipe-hint { display: block; }
     .pain-row { padding:16px 16px; gap:12px; }
     .pain-num { flex-basis:40px; width:40px; height:40px; font-size:16px; }
     .lov-row2 { gap:12px; }
@@ -347,6 +351,18 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
   .testi-avatar { width:38px; height:38px; border-radius:999px; background:linear-gradient(135deg,#f0dfae,#e6c87f); color:#5a4415; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:13px; box-shadow:0 0 0 3px #fff, 0 0 0 4px rgba(233,154,54,0.35); }
   .testi-name { font-weight:700; font-size:13px; color:#201d18; }
   .testi-loc { font-size:11px; color:#8a7f73; }
+  /* --- Carrusel de testimonios: swipe horizontal en móvil, grid centrado en desktop --- */
+  .testi-carousel {
+    display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none;
+    padding: 6px 4px 6px; max-width: 960px; margin: 0 auto;
+  }
+  .testi-carousel::-webkit-scrollbar { display: none; }
+  .testi-carousel .testi-card { flex: 0 0 280px; scroll-snap-align: start; }
+  .testi-dots { display: none; justify-content: center; gap: 8px; margin-top: 14px; }
+  .testi-dots .dot { width: 7px; height: 7px; border-radius: 999px; background: rgba(185,96,27,0.25); transition: background .2s ease, transform .2s ease; }
+  .testi-dots .dot.active { background: #b9601b; transform: scale(1.35); }
+  .testi-swipe-hint { display: none; text-align:center; font-size:12px; color:#a8895f; font-weight:600; margin-top:2px; }
 
   footer { background: #0e1e12; color: rgba(255,255,255,0.55); text-align: center; padding: 30px 16px; font-size: 12px; line-height: 1.7; }
   footer a { color: rgba(255,255,255,0.75); }
@@ -610,7 +626,7 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
     <p style="color:#6b6357; font-size:16px;">Esto es lo que cambió cuando finalmente tuvieron un plan claro para organizar sus comidas.</p>
   </div>
   <div class="wrap-wide reveal">
-    <div class="grid3" style="max-width:960px; margin:0 auto; grid-template-columns:repeat(2,1fr);">
+    <div class="testi-carousel" id="testiCarousel">
       <div class="testi-card">
         <div style="font-size:12.5px; font-weight:700; color:#b9601b; text-transform:uppercase; letter-spacing:0.4px; margin-bottom:8px;">"Bajé 7 kilos en 4 semanas"</div>
         <div class="testi-stars">★★★★★</div>
@@ -635,6 +651,10 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
         <div class="testi-text">"Trabajo todo el día y necesitaba algo práctico, no recetas complicadas con ingredientes imposibles. La mayoría se prepara rápido y con alimentos que encuentro en el supermercado de siempre. Me ayudó a planificar mejor, comprar con intención y dejar de improvisar cada noche."</div>
         <div class="testi-author"><div class="testi-avatar">CF</div><div><div class="testi-name">Claudia Fernández</div><div class="testi-loc">Córdoba, Argentina</div></div></div>
       </div>
+    </div>
+    <p class="testi-swipe-hint">← Deslizá para ver más testimonios →</p>
+    <div class="testi-dots" id="testiDots">
+      <span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
     </div>
   </div>
 </section>
@@ -790,6 +810,22 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }, { threshold: 0.15 });
   revealEls.forEach(function(el) { observer.observe(el); });
+  // Carrusel de testimonios: sincroniza los puntos con la tarjeta visible al hacer swipe
+  var testiCarousel = document.getElementById('testiCarousel');
+  var testiDots = document.getElementById('testiDots');
+  if (testiCarousel && testiDots) {
+    var testiCards = testiCarousel.querySelectorAll('.testi-card');
+    var dots = testiDots.querySelectorAll('.dot');
+    var dotsObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var idx = Array.prototype.indexOf.call(testiCards, entry.target);
+          dots.forEach(function(d, i) { d.classList.toggle('active', i === idx); });
+        }
+      });
+    }, { root: testiCarousel, threshold: 0.6 });
+    testiCards.forEach(function(card) { dotsObserver.observe(card); });
+  }
 
   // Notificaciones de compra en vivo (solo si REAL_PURCHASES tiene datos reales)
   if (REAL_PURCHASES.length > 0) {
