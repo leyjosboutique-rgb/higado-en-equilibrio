@@ -289,14 +289,7 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
     font-size: 12.5px; letter-spacing: 0.4px; padding: 5px 12px; border-radius: 999px;
     box-shadow: 0 6px 16px rgba(217,43,43,0.45); animation: badgePulse 1.8s ease-in-out infinite;
   }
-  .price-new-wrap { position: relative; display: inline-block; }
-  .price-new-wrap::before {
-    content: ""; position: absolute; inset: -18px -34px; z-index: -1; border-radius: 999px;
-    background: radial-gradient(ellipse, rgba(255,201,60,0.4) 0%, rgba(255,201,60,0) 72%);
-    filter: blur(6px); animation: priceGlow 2.6s ease-in-out infinite;
-  }
   @keyframes badgePulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.07); } }
-  @keyframes priceGlow { 0%, 100% { opacity: 0.55; transform: scale(1); } 50% { opacity: 1; transform: scale(1.1); } }
   .price-usd-note { display: block; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.2px; color: rgba(255,255,255,0.45); text-decoration: none; margin-top: 2px; }
   .price-old .price-usd-note { display: inline; margin-left: 4px; font-size: 12px; }
   .countdown { display: grid; grid-template-columns: repeat(2, 66px); gap: 8px; justify-content: center; margin: 18px 0; }
@@ -549,7 +542,7 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
       <span class="price-old">Precio normal: <span class="price-currency">US$</span>29.90</span>
       <span class="price-badge">-67% OFF</span>
     </div>
-    <div class="price-new-wrap"><div class="price-new"><span class="price-currency">US$</span>9.90</div></div>
+    <div class="price-new"><span class="price-currency">US$</span>9.90</div>
     <p style="color:rgba(255,255,255,0.75); font-size:14px; margin-bottom:6px;">Pago único · Acceso de por vida</p>
     <p style="color:rgba(255,255,255,0.6); font-size:12px;">Precio de lanzamiento válido hasta el <b id="hgDeadlineLabel">15 de agosto</b>. Después vuelve a US$29.90.</p>
 
@@ -746,7 +739,7 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
       <span class="price-old">Precio normal: <span class="price-currency">US$</span>29.90</span>
       <span class="price-badge">-67% OFF</span>
     </div>
-    <div class="price-new-wrap"><div class="price-new" style="font-size:42px;"><span class="price-currency">US$</span>9.90</div></div>
+    <div class="price-new" style="font-size:42px;"><span class="price-currency">US$</span>9.90</div>
     <a class="btn btn-cta" href="https://pay.hotmart.com/B106944825F?off=sq94njl5&checkoutMode=10" onclick="if(window.fbq){fbq('track','InitiateCheckout');}">Quiero Dejar de Improvisar →</a>
     <div class="trust-mini"><span>🛡️ Garantía de 60 días</span><span>🔒 100% seguro</span></div>
   </div>
