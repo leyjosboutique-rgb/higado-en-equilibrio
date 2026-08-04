@@ -282,16 +282,6 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
 
   .price-old { text-decoration: line-through; color: rgba(255,255,255,0.5); font-weight: 800; font-size: 17px; }
   .price-new { font-family:'Bodoni Moda', serif; font-size: 54px; font-weight: 900; color: #ffc93c; letter-spacing: -1.5px; margin: 8px 0; }
-  .price-currency { font-size: 0.32em; font-weight: 700; letter-spacing: 0; opacity: 0.75; margin-right: 2px; }
-  .price-row { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 2px; }
-  .price-badge {
-    background: linear-gradient(135deg, #ff6a5b 0%, #d92b2b 100%); color: #fff; font-weight: 900;
-    font-size: 12.5px; letter-spacing: 0.4px; padding: 5px 12px; border-radius: 999px;
-    box-shadow: 0 6px 16px rgba(217,43,43,0.45); animation: badgePulse 1.8s ease-in-out infinite;
-  }
-  @keyframes badgePulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.07); } }
-  .price-usd-note { display: block; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.2px; color: rgba(255,255,255,0.45); text-decoration: none; margin-top: 2px; }
-  .price-old .price-usd-note { display: inline; margin-left: 4px; font-size: 12px; }
   .countdown { display: grid; grid-template-columns: repeat(2, 66px); gap: 8px; justify-content: center; margin: 18px 0; }
   .time-box { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); border-radius: 12px; padding: 10px 4px; text-align: center; }
   .time-box span { display: block; font-size: 21px; font-weight: 900; color: #ffc93c; }
@@ -538,13 +528,10 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
     <h2>Accedé hoy a <span style="color:#ffc93c;">Hígado en Equilibrio</span></h2>
     <p style="color:rgba(255,255,255,0.8); font-size:16px; margin-bottom:6px;">No es el precio final. Es el precio de lanzamiento — y el que baja es el reloj, no la calidad.</p>
 
-    <div class="price-row">
-      <span class="price-old">Precio normal: <span class="price-currency">US$</span>29.90</span>
-      <span class="price-badge">-67% OFF</span>
-    </div>
-    <div class="price-new"><span class="price-currency">US$</span>9.90</div>
+    <div class="price-old">Precio normal: $79.900</div>
+    <div class="price-new">$39.900</div>
     <p style="color:rgba(255,255,255,0.75); font-size:14px; margin-bottom:6px;">Pago único · Acceso de por vida</p>
-    <p style="color:rgba(255,255,255,0.6); font-size:12px;">Precio de lanzamiento válido hasta el <b id="hgDeadlineLabel">15 de agosto</b>. Después vuelve a US$29.90.</p>
+    <p style="color:rgba(255,255,255,0.6); font-size:12px;">Precio de lanzamiento válido hasta el <b id="hgDeadlineLabel">15 de agosto</b>. Después vuelve a $79.900.</p>
 
     <div class="countdown">
       <div class="time-box"><span id="hgMinutes">00</span><small>Min</small></div>
@@ -735,11 +722,8 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
   <div class="wrap reveal">
     <h2>Tu hígado no necesita más prohibiciones. <span style="color:#ffc93c;">Necesita un plan.</span></h2>
     <p style="color:rgba(255,255,255,0.8); font-size:16px; margin-bottom:22px;">No es que te falte fuerza de voluntad. Es que hasta ahora nadie te dio el plan correcto.</p>
-    <div class="price-row">
-      <span class="price-old">Precio normal: <span class="price-currency">US$</span>29.90</span>
-      <span class="price-badge">-67% OFF</span>
-    </div>
-    <div class="price-new" style="font-size:42px;"><span class="price-currency">US$</span>9.90</div>
+    <div class="price-old">Precio normal: $79.900</div>
+    <div class="price-new" style="font-size:42px;">$39.900</div>
     <a class="btn btn-cta" href="https://pay.hotmart.com/B106944825F?off=sq94njl5&checkoutMode=10" onclick="if(window.fbq){fbq('track','InitiateCheckout');}">Quiero Dejar de Improvisar →</a>
     <div class="trust-mini"><span>🛡️ Garantía de 60 días</span><span>🔒 100% seguro</span></div>
   </div>
