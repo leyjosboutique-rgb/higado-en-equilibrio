@@ -65,6 +65,7 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
   .trust-mini { font-size: 13px; color: #837a6c; font-weight: 700; margin-top: 14px; letter-spacing: 0.2px; display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
   .section-dark .trust-mini { color: rgba(255,255,255,0.75); }
   .section { padding: 80px 16px; }
+  .section-emily { padding: 52px 16px; }
   .section-dark {
     position: relative;
     background:
@@ -141,7 +142,7 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
   .urgency-box p.urgency-text { margin: 0; font-size: 13px; line-height: 1.55; color: #4a433b; }
   @media (max-width: 700px) {
     .grid2, .grid3 { grid-template-columns: 1fr; }
-    h1{font-size:28px;} h2{font-size:24px;} .section{padding:44px 16px;}
+    h1{font-size:28px;} h2{font-size:24px;} .section{padding:44px 16px;} .section-emily{padding:32px 16px;}
     .topbar { letter-spacing: 2px; font-size: 11px; padding: 12px 10px; }
     .btn { width: 100%; max-width: 320px; font-size: 15.5px; padding: 16px 22px; }
     .price-new { font-size: 38px; }
@@ -152,6 +153,8 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
     .content-row2-body { padding:14px 16px; }
     .content-row2-body b { font-size:16px; }
     .content-row2-body p { font-size:12.5px; }
+    .offer-grid { grid-template-columns: 1fr; gap:18px; text-align:center; }
+    .offer-grid .offer-mockup { max-width:230px; margin:0 auto; }
     .guarantee-card { padding:28px 18px 24px; }
     .guarantee-shield { width: 68px; height: 74px; margin: 20px auto 6px; }
     .guarantee-shield svg { width: 68px; height: 74px; }
@@ -327,6 +330,11 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
   .content-row2-body b { font-family:'Bodoni Moda', serif; font-size:18px; color:#201d18; font-weight:700; }
   .content-row2-body p { margin:4px 0 0; font-size:13.5px; color:#6b6357; line-height:1.5; }
   .content-bonus2 img { flex-basis:34%; width:34%; }
+  .content-plan2 { flex-direction: column; }
+  .content-plan2 .content-row2-body { padding: 18px 22px 6px; }
+  .content-plan2 img { width: 100%; height: auto; object-fit: initial; display: block; }
+  .offer-grid { display:grid; grid-template-columns: 300px 1fr; gap:36px; align-items:center; margin:0 auto; }
+  .offer-content { text-align:center; }
   .guarantee-box { background: #f2f7ef; border: 1px solid rgba(40,94,52,0.2); border-radius: 20px; padding: 32px; max-width: 560px; margin: 0 auto; box-shadow: 0 16px 34px rgba(40,94,52,0.08); }
 
   /* --- Garantía v2: card con borde dorado y escudo --- */
@@ -384,7 +392,10 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
     padding: 6px 4px 6px; max-width: 960px; margin: 0 auto;
   }
   .testi-carousel::-webkit-scrollbar { display: none; }
-  .testi-carousel .testi-card { flex: 0 0 280px; scroll-snap-align: start; }
+  .testi-carousel .testi-card { flex: 0 0 300px; scroll-snap-align: start; }
+  @media (min-width: 701px) {
+    .testi-carousel { justify-content: center; }
+  }
   .testi-dots { justify-content: center; gap: 8px; margin-top: 14px; }
   .testi-dots .dot { width: 7px; height: 7px; border-radius: 999px; background: rgba(185,96,27,0.25); transition: background .2s ease, transform .2s ease; }
   .testi-dots .dot.active { background: #b9601b; transform: scale(1.35); }
@@ -409,7 +420,7 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
     <div class="label">✦ Plan de recetas para hígado graso</div>
     <h1>Recetas deliciosas para cuidar tu hígado <span class="accent-italic" style="color:#ffc93c;">sin vivir a dieta</span></h1>
     <p style="font-size:18px; line-height:1.65; color:rgba(255,255,255,0.85); max-width:600px; margin:0 auto 8px;">
-      Más de 100 recetas organizadas para desayuno, almuerzo, snack y cena, con ingredientes cotidianos y preparaciones sencillas para dejar de improvisar cada comida.
+      Recetas organizadas para desayuno, almuerzo, snack y cena, con ingredientes cotidianos y preparaciones sencillas para dejar de improvisar cada comida.
     </p>
 
     <div class="hero-grid">
@@ -484,7 +495,7 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
 <!-- ============================================= -->
 <!-- 4. AUTORIDAD — EMILY CARTER -->
 <!-- ============================================= -->
-<section class="section section-light">
+<section class="section section-light section-emily">
   <div class="wrap reveal">
     <div class="label">Quién está detrás de este recetario</div>
     <h2>Nutricionista <span class="accent-italic">Emily Carter</span></h2>
@@ -548,62 +559,73 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
 </section>
 
 <!-- ============================================= -->
-<!-- 6. OFERTA CON URGENCIA (fecha fija, no cuenta regresiva de sesión) -->
-<!-- ============================================= -->
-<section class="section section-dark" id="oferta">
-  <div class="wrap reveal">
-    <div class="label">Oferta de lanzamiento</div>
-    <h2>Accedé hoy a <span style="color:#ffc93c;">Hígado en Equilibrio</span></h2>
-    <p style="color:rgba(255,255,255,0.8); font-size:16px; margin-bottom:6px;">No es el precio final. Es el precio de lanzamiento — y el que baja es el reloj, no la calidad.</p>
-    <p style="color:rgba(255,255,255,0.65); font-size:14px; max-width:480px; margin:0 auto 18px; line-height:1.55;">Una sola consulta con nutricionista particular puede costarte mucho más que esto — y no te da el plan completo, comida por comida, para sostener en el tiempo.</p>
-
-    <div class="price-row">
-      <span class="price-old">Precio normal: $159.900</span>
-      <span class="price-badge-lg">75% OFF</span>
-    </div>
-    <div class="price-new">$39.900</div>
-    <p style="color:rgba(255,255,255,0.75); font-size:14px; margin-bottom:6px;">Pago único · Acceso de por vida</p>
-    <p style="color:rgba(255,255,255,0.6); font-size:12px;">Precio de lanzamiento por tiempo limitado. Después vuelve a $159.900.</p>
-
-    <div class="countdown">
-      <div class="time-box"><span id="hgMinutes">00</span><small>Min</small></div>
-      <div class="time-box"><span id="hgSeconds">00</span><small>Seg</small></div>
-    </div>
-
-    <a class="btn btn-cta" href="https://pay.hotmart.com/B106944825F?off=sq94njl5&checkoutMode=10" onclick="if(window.fbq){fbq('track','InitiateCheckout');}" style="margin-top:12px;">Sí, Quiero Mi Plan Real →</a>
-    <div class="trust-mini"><span>🔒 Compra 100% segura</span><span>🛡️ Garantía de 60 días</span></div>
-  </div>
-</section>
-
-<!-- ============================================= -->
-<!-- 7. QUÉ VAS A ENCONTRAR ADENTRO (con thumbnails) -->
+<!-- 6. QUÉ VAS A ENCONTRAR ADENTRO (con thumbnails) -->
 <!-- ============================================= -->
 <section class="section section-light">
   <div class="wrap reveal">
     <div class="label">📄 Contenido completo</div>
     <h2>Nada de bajarte un PDF gigante y perderte.<br><span class="accent-italic">Así está organizado por dentro.</span></h2>
+    <p style="color:#6b6357; font-size:15px; max-width:480px; margin:10px auto 0; line-height:1.6;">Primero seguís la ruta de cuatro semanas. Después encontrás cada receta organizada según el momento del día.</p>
     <div class="divider-mini"></div>
   </div>
-  <div class="wrap-wide reveal" style="max-width:700px; margin-top:30px;">
+  <div class="wrap-wide reveal" style="max-width:960px; margin-top:30px;">
+    <div class="content-row2 content-plan2">
+      <div class="content-row2-body"><div class="content-title-row"><span class="content-num2">01</span><b>Plan práctico de 4 semanas</b></div><p>Una ruta organizada, semana a semana, para saber qué preparar sin empezar de cero todos los días.</p></div>
+      <img src="plan-4-semanas.webp" width="1448" height="1086" alt="Plan práctico de 4 semanas: semana 1 a 4 con desayuno, almuerzo, snack y cena organizados" loading="lazy">
+    </div>
     <div class="content-row2">
       <img src="meal-1.webp" width="407" height="262" alt="Desayunos Nutritivos" loading="lazy">
-      <div class="content-row2-body"><div class="content-title-row"><span class="content-num2">01</span><b>Desayunos Nutritivos</b></div><p>Para arrancar el día sin picos de azúcar ni pesadez.</p></div>
+      <div class="content-row2-body"><div class="content-title-row"><span class="content-num2">02</span><b>Desayunos Nutritivos</b></div><p>Para arrancar el día sin picos de azúcar ni pesadez.</p></div>
     </div>
     <div class="content-row2">
       <img src="meal-2.webp" width="407" height="258" alt="Almuerzos Completos" loading="lazy">
-      <div class="content-row2-body"><div class="content-title-row"><span class="content-num2">02</span><b>Almuerzos Completos</b></div><p>Platos que sacian sin sobrecargar el hígado ni la digestión.</p></div>
+      <div class="content-row2-body"><div class="content-title-row"><span class="content-num2">03</span><b>Almuerzos Completos</b></div><p>Platos que sacian sin sobrecargar el hígado ni la digestión.</p></div>
     </div>
     <div class="content-row2">
       <img src="meal-3.webp" width="407" height="257" alt="Snacks Saludables" loading="lazy">
-      <div class="content-row2-body"><div class="content-title-row"><span class="content-num2">03</span><b>Snacks Saludables</b></div><p>Para cuando aparece el hambre entre comidas.</p></div>
+      <div class="content-row2-body"><div class="content-title-row"><span class="content-num2">04</span><b>Snacks Saludables</b></div><p>Para cuando aparece el hambre entre comidas.</p></div>
     </div>
     <div class="content-row2">
       <img src="meal-4.webp" width="407" height="256" alt="Cenas Livianas" loading="lazy">
-      <div class="content-row2-body"><div class="content-title-row"><span class="content-num2">04</span><b>Cenas Livianas</b></div><p>Recetas suaves que ayudan a descansar mejor.</p></div>
+      <div class="content-row2-body"><div class="content-title-row"><span class="content-num2">05</span><b>Cenas Livianas</b></div><p>Recetas suaves que ayudan a descansar mejor.</p></div>
     </div>
     <div class="content-row2 content-bonus2">
       <img src="meal-bonus.webp" width="335" height="162" alt="Guía de compras y alimentos" loading="lazy">
-      <div class="content-row2-body"><div class="content-title-row"><span class="content-num2">+</span><b>Guía de alimentos permitidos y prohibidos</b></div><p>+ Lista de compras semanal descargable</p></div>
+      <div class="content-row2-body"><div class="content-title-row"><span class="content-num2">06</span><b>Guía de alimentos permitidos y prohibidos</b></div><p>+ Lista de compras semanal descargable</p></div>
+    </div>
+    <p style="text-align:center; color:#8a7f73; font-size:13.5px; font-weight:600; margin-top:6px;">Todo organizado para que no tengas que decidir desde cero en cada comida.</p>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- 7. OFERTA CON URGENCIA -->
+<!-- ============================================= -->
+<section class="section section-dark" id="oferta">
+  <div class="wrap-wide reveal offer-grid" style="max-width:880px;">
+    <div class="mockup-frame offer-mockup" style="background:none; border:none; aspect-ratio:auto; height:auto;">
+      <img src="mockup-producto.webp" width="422" height="436" alt="Ebook Hígado en Equilibrio, +100 recetas simples para cuidar tu hígado" loading="lazy" style="width:100%; height:auto; display:block; border-radius:18px;">
+    </div>
+    <div class="offer-content">
+      <div class="label">Oferta de lanzamiento</div>
+      <h2>Accedé hoy a <span style="color:#ffc93c;">Hígado en Equilibrio</span></h2>
+      <p style="color:rgba(255,255,255,0.8); font-size:16px; margin-bottom:6px;">No es el precio final. Es el precio de lanzamiento — y el que baja es el reloj, no la calidad.</p>
+      <p style="color:rgba(255,255,255,0.65); font-size:14px; max-width:480px; margin:0 auto 18px; line-height:1.55;">Una sola consulta con nutricionista particular puede costarte mucho más que esto — y no te da el plan completo, comida por comida, para sostener en el tiempo.</p>
+
+      <div class="price-row">
+        <span class="price-old">Precio normal: $159.900</span>
+        <span class="price-badge-lg">75% OFF</span>
+      </div>
+      <div class="price-new">$39.900</div>
+      <p style="color:rgba(255,255,255,0.75); font-size:14px; margin-bottom:6px;">Pago único · Acceso de por vida</p>
+      <p style="color:rgba(255,255,255,0.6); font-size:12px;">Precio de lanzamiento por tiempo limitado. Después vuelve a $159.900.</p>
+
+      <div class="countdown">
+        <div class="time-box"><span id="hgMinutes">00</span><small>Min</small></div>
+        <div class="time-box"><span id="hgSeconds">00</span><small>Seg</small></div>
+      </div>
+
+      <a class="btn btn-cta" href="https://pay.hotmart.com/B106944825F?off=sq94njl5&checkoutMode=10" onclick="if(window.fbq){fbq('track','InitiateCheckout');}" style="margin-top:12px;">Sí, Quiero Mi Plan Real →</a>
+      <div class="trust-mini"><span>🔒 Compra 100% segura</span><span>🛡️ Garantía de 60 días</span></div>
     </div>
   </div>
 </section>
@@ -665,19 +687,19 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
       <div class="testi-card">
         <div class="testi-kicker-badge">"De 72 a 38 en ocho semanas. Sin dietas de castigo."</div>
         <div class="testi-stars">★★★★★</div>
-        <div class="testi-text">"Me diagnosticaron hígado graso grado 2. Transaminasas en 72. Y esa preocupación conocida: saber que algo hay que cambiar, pero no saber por dónde empezar.<br><br>Arranqué por lo obvio — los desayunos y las cenas, que eran las comidas que más improvisaba. Después seguí la lista de compras, para dejar de llevar productos solo porque parecían saludables en el empaque.<br><br>A las ocho semanas, control de rutina: transaminasas en 38. Mi médica me preguntó qué había cambiado en mi rutina.<br><br>Lo que más me sorprendió no fueron los números. Fue darme cuenta de que podía organizarme sin comer platos aburridos ni salir a buscar ingredientes imposibles de conseguir."</div>
+        <div class="testi-text">"Me diagnosticaron hígado graso grado 2, con transaminasas en 72, y no sabía por dónde empezar. Comencé organizando desayunos, cenas y mis compras para dejar de improvisar. Ocho semanas después, mis transaminasas bajaron a 38. Más allá de los resultados, descubrí que podía organizar mi alimentación sin comer platos aburridos ni buscar ingredientes difíciles."</div>
         <div class="testi-author"><div class="testi-avatar">ML</div><div><div class="testi-name">Mariana López Vega · 48 años</div><div class="testi-loc">Jardín, Antioquia</div></div></div>
       </div>
       <div class="testi-card">
         <div class="testi-kicker-badge">"365 de triglicéridos. Y encima, la mesa dividida en dos todas las noches."</div>
         <div class="testi-stars">★★★★★</div>
-        <div class="testi-text">"Triglicéridos en 365. Hígado graso. Y una rutina que ya me tenía agotado antes de sentarme a comer: un plato para mí, otro distinto para mi familia, cada noche.<br><br>Había probado dietas antes. Todas fallaban por lo mismo — no porque fueran malas, sino porque ninguna pensaba en que en mi casa comemos todos juntos, no cada uno por su lado.<br><br>Con el plan de cuatro semanas armé desayunos, almuerzos y cenas que come toda la familia. Los mismos platos. Sin negociar, sin duplicar el trabajo, sin la mesa dividida en dos.<br><br>En siete semanas bajé 5 kilos. Sin pasar hambre. Sin esa sensación de estar cumpliendo una condena a la hora de comer.<br><br>Lo que más me cambió el día a día no fueron las recetas — fue la lista de compras. Dejé de comprar ingredientes que usaba una sola vez y terminaban olvidados en la heladera. Ahora sé exactamente qué necesito para la semana. Ni de más, ni de menos."</div>
+        <div class="testi-text">"Me diagnosticaron hígado graso y tenía los triglicéridos en 365. Había probado varias dietas, pero ninguna funcionaba porque tenía que cocinar diferente para mi familia. Con el plan de cuatro semanas empezamos a comer los mismos platos en casa. En siete semanas bajé 5 kilos sin pasar hambre. Lo que más cambió mi rutina fue la lista de compras: ahora sé exactamente qué necesito para toda la semana."</div>
         <div class="testi-author"><div class="testi-avatar">DM</div><div><div class="testi-name">Daniel Méndez Ríos · 52 años</div><div class="testi-loc">Bogotá</div></div></div>
       </div>
       <div class="testi-card">
         <div class="testi-kicker-badge">"Hinchada, cansada, y comiendo cualquier cosa a las seis de la tarde. Todos los días."</div>
         <div class="testi-stars">★★★★★</div>
-        <div class="testi-text">"No necesitaba un examen para saber que algo andaba mal. Lo sentía todos los días: hinchada, cansada, y a media tarde con un hambre que me hacía comer lo primero que encontraba. Después, pesada. Otra vez.<br><br>Empecé por lo más simple de la guía: la sección de snacks y las cenas rápidas. Nada elaborado, nada que me pidiera un tiempo que no tenía.<br><br>Desde la segunda semana pasó algo que no esperaba: dejé de llegar a la noche con esa desesperación por comer algo, lo que fuera. Y la hinchazón — la misma que llevaba meses cargando — empezó a aparecer cada vez menos.<br><br>Pero el cambio más grande no fue en el cuerpo. Fue dejar de abrir la heladera sin saber qué hacer con lo que había adentro. Ahora abro la guía, elijo el momento del día, y ya tengo la respuesta resuelta.<br><br>En mi siguiente control, el profesional que me acompaña vio una evolución favorable y me dijo que siguiera exactamente por ese camino."</div>
+        <div class="testi-text">"Me sentía hinchada, cansada y llegaba a la tarde con tanta hambre que terminaba comiendo cualquier cosa. Empecé con la sección de snacks y cenas rápidas, sin complicarme. Desde la segunda semana dejé de llegar desesperada a la noche, la hinchazón empezó a disminuir y, lo más importante, dejé de abrir la heladera sin saber qué cocinar. En mi siguiente control, el profesional que me acompaña confirmó una evolución favorable y me recomendó seguir por ese camino."</div>
         <div class="testi-author"><div class="testi-avatar">GS</div><div><div class="testi-name">Gabriela Suárez Molina · 45 años</div><div class="testi-loc">Armenia</div></div></div>
       </div>
     </div>
