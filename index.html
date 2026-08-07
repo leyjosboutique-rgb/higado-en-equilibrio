@@ -104,16 +104,16 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
     background: rgba(255,253,249,0.85); border: 1px solid rgba(185,96,27,0.1); border-radius: 18px;
     box-shadow: 0 10px 26px rgba(185,96,27,0.06);
   }
-  .pain-num {
-    flex: 0 0 46px; width: 46px; height: 46px; border-radius: 999px;
-    background: linear-gradient(135deg, #f0a84a 0%, #d9840f 100%); color: #fff;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 21px; line-height: 1;
-    box-shadow: 0 6px 14px rgba(217,132,15,0.35);
-  }
   .pain-divider { flex: 0 0 1px; align-self: stretch; border-left: 2px dotted rgba(185,96,27,0.35); }
   .pain-row p { margin: 0; font-size: 15.5px; line-height: 1.55; color: #3a352d; }
-  .pain-alert { color: #d92b2b; font-weight: 800; }
+  .pain-x {
+    flex: 0 0 40px; width: 40px; height: 40px; border-radius: 999px;
+    background: #fdeceb; color: #d92b2b; display: flex; align-items: center; justify-content: center;
+    font-weight: 900; font-size: 19px; line-height: 1;
+  }
+  .pain-text { display: flex; flex-direction: column; gap: 4px; }
+  .pain-title { font-size: 16px; font-weight: 800; color: #201d18; }
+  .pain-text p { margin: 0; font-size: 14.5px; line-height: 1.5; color: #5a5349; }
   .section-white { background: #ffffff; }
   .wrap { max-width: 740px; margin: 0 auto; text-align: center; }
   .wrap-wide { max-width: 1080px; margin: 0 auto; text-align: center; }
@@ -140,6 +140,20 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
   }
   .urgency-box .urgency-title { margin: 0 0 6px; font-size: 14px; font-weight: 800; color: #d92b2b; }
   .urgency-box p.urgency-text { margin: 0; font-size: 13px; line-height: 1.55; color: #4a433b; }
+  .hero-urgency { max-width: 440px; margin: 18px auto 16px; display: flex; flex-direction: column; gap: 10px; }
+  .hero-urgency-bar {
+    background: #fff0ef; border: 1px solid rgba(216,43,43,0.15); border-radius: 12px;
+    padding: 11px 16px; display: flex; align-items: center; justify-content: center; gap: 8px;
+    font-size: 13.5px; font-weight: 700; color: #c81e3a;
+  }
+  .hero-urgency-dot {
+    width: 9px; height: 9px; border-radius: 999px; background: #e23b3b; flex-shrink: 0;
+    box-shadow: 0 0 0 4px rgba(226,59,59,0.15);
+  }
+  .hero-urgency-timer {
+    background: #d92b2b; color: #fff; font-weight: 800; font-size: 13.5px;
+    padding: 3px 10px; border-radius: 6px; letter-spacing: 0.5px;
+  }
   @media (max-width: 700px) {
     .grid2, .grid3 { grid-template-columns: 1fr; }
     h1{font-size:28px;} h2{font-size:24px;} .section{padding:44px 16px;} .section-emily{padding:32px 16px;}
@@ -169,7 +183,9 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
     .testi-swipe-hint { display: none; }
     .testi-counter { display: block; text-align:center; font-size:11.5px; font-weight:700; color:#a8895f; margin-top:2px; letter-spacing:0.3px; }
     .pain-row { padding:16px 16px; gap:12px; }
-    .pain-num { flex-basis:40px; width:40px; height:40px; font-size:16px; }
+    .pain-x { flex-basis:34px; width:34px; height:34px; font-size:16px; }
+    .pain-title { font-size:14.5px; }
+    .pain-text p { font-size:13.5px; }
     .lov-row2 { gap:12px; }
     .hero-grid { max-width: 340px; gap: 8px; }
     .solution-grid { grid-template-columns: 1fr; text-align:center; gap: 24px; }
@@ -187,6 +203,10 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
     .lov-icon2 { flex-basis: 44px; width: 44px; height: 44px; font-size: 18px; }
     .feature-pill { padding: 13px 14px; gap: 12px; }
     .feature-pill span:last-child { font-size: 13.5px; }
+    .steps-wrap { margin-top: 36px; }
+    .steps-3 { flex-direction: column; align-items: center; gap: 26px; }
+    .step-item { max-width: 300px; padding: 0; }
+    .step-item::after { display: none; }
 
     /* Hero: apretar todo el espaciado vertical para que entre completo en la pantalla */
     .hero-section { padding: 22px 14px 26px; }
@@ -221,6 +241,46 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
   }
   .feature-pill span:last-child { font-size: 14.5px; line-height: 1.5; color: #2c2a27; }
 
+  .steps-wrap { margin-top: 52px; text-align: center; }
+  .steps-lead { display: block; font-family: 'Bodoni Moda', serif; font-size: 21px; color: #1d4527; font-weight: 700; }
+  .steps-sub { color: #8a7f73; font-size: 14px; margin: 4px 0 30px; }
+  .steps-3 { display: flex; align-items: flex-start; justify-content: center; gap: 0; }
+  .step-item { flex: 1 1 0; max-width: 240px; position: relative; padding: 0 16px; }
+  .step-item:not(:last-child)::after {
+    content: ""; position: absolute; top: 32px; left: calc(50% + 48px); right: calc(-50% + 48px);
+    border-top: 2px dashed rgba(29,69,39,0.25);
+  }
+  .step-icon-wrap { position: relative; width: 64px; height: 64px; margin: 0 auto 14px; }
+  .step-icon {
+    width: 64px; height: 64px; border-radius: 999px;
+    background: linear-gradient(160deg, #245530 0%, #12301b 100%);
+    display: flex; align-items: center; justify-content: center; font-size: 26px;
+    box-shadow: 0 8px 18px rgba(29,69,39,0.28);
+  }
+  .step-num {
+    position: absolute; top: -4px; right: -4px; width: 22px; height: 22px; border-radius: 999px;
+    background: #fff; color: #1d4527; font-weight: 800; font-size: 12px;
+    display: flex; align-items: center; justify-content: center;
+    border: 2px solid #e79a3d; box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  }
+  .step-title { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 16px; color: #1d4527; margin-bottom: 6px; }
+  .step-text { margin: 0; font-size: 13px; line-height: 1.55; color: #6b6357; }
+
+  .steps-inline-wrap { margin-top: 26px; }
+  .steps-inline-wrap .steps-lead { display: block; font-family: 'Inter', sans-serif; font-size: 18px; color: #1d4527; font-weight: 700; }
+  .steps-inline-wrap .steps-sub { color: #8a7f73; font-size: 13px; margin: 3px 0 18px; }
+  .steps-6-inline { display: flex; flex-direction: column; gap: 16px; }
+  .steps-6-inline .step-item {
+    display: grid; grid-template-columns: 42px 1fr; grid-template-rows: auto auto;
+    column-gap: 12px; row-gap: 2px; max-width: none; padding: 0;
+  }
+  .steps-6-inline .step-item::after { display: none; content: none; }
+  .steps-6-inline .step-icon-wrap { grid-column: 1; grid-row: 1 / 3; width: 42px; height: 42px; margin: 0; align-self: center; }
+  .steps-6-inline .step-icon { width: 42px; height: 42px; font-size: 18px; }
+  .steps-6-inline .step-num { width: 18px; height: 18px; font-size: 10px; top: -3px; right: -3px; }
+  .steps-6-inline .step-title { grid-column: 2; grid-row: 1; font-size: 14.5px; margin-bottom: 0; }
+  .steps-6-inline .step-text { grid-column: 2; grid-row: 2; font-size: 12.5px; }
+
   .lov-card {
     background: #fefdfb; border: 1px solid rgba(0,0,0,0.07); border-radius: 16px;
     padding: 24px; text-align: left; box-shadow: 0 4px 14px rgba(30,25,15,0.03);
@@ -238,7 +298,7 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
   .lov-icon2 { flex:0 0 50px; width:50px; height:50px; border-radius:999px; background:linear-gradient(160deg,#245530 0%,#12301b 100%); display:flex; align-items:center; justify-content:center; font-size:20px; box-shadow:0 8px 18px rgba(29,69,39,0.28); }
   .lov-title-row { display:flex; align-items:center; gap:8px; margin-bottom: 4px; }
   .lov-num2 { display:inline-flex; align-items:center; justify-content:center; flex:0 0 22px; width:22px; height:22px; border-radius:999px; background:#f0dfc0; color:#8a5a1f; font-size:11px; font-weight:800; }
-  .lov-card2 b { font-family:'Bodoni Moda', serif; font-size: 17px; color: #1d4527; line-height:1.2; }
+  .lov-card2 b { font-family:'Inter', sans-serif; font-size: 17px; color: #1d4527; line-height:1.2; }
   .lov-card2 p { margin: 0; font-size: 13.5px; line-height: 1.55; color: #7a7268; }
   .lov-divider2 { margin-top:16px; padding-top:12px; border-top:1px dashed rgba(185,96,27,0.25); text-align:center; color:#e79a3d; font-size:12px; }
 
@@ -335,6 +395,10 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
     flex: 0 0 34%; width: 34%; display: flex; align-items: center; justify-content: center;
     background: linear-gradient(135deg, #25D366, #128C7E);
   }
+  .content-bonus2 img.content-thumb-small {
+    flex: 0 0 90px; width: 90px; height: 90px; object-fit: cover; border-radius: 14px;
+    align-self: center; margin: 0 0 0 18px;
+  }
   .offer-grid { display:grid; grid-template-columns: 1fr; gap:18px; align-items:center; margin:0 auto; }
   .offer-content { text-align:center; }
   @media (min-width: 701px) {
@@ -423,9 +487,9 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
 <section class="section section-dark hero-section">
   <div class="wrap reveal">
     <div class="label">✦ Plan de recetas para hígado graso</div>
-    <h1>Recetas deliciosas para cuidar tu hígado <span class="accent-italic" style="color:#ffc93c;">sin vivir a dieta</span></h1>
+    <h1>Comidas que le caen bien al hígado <span class="accent-italic" style="color:#ffc93c;">y te dejan con ganas de repetir</span></h1>
     <p style="font-size:18px; line-height:1.65; color:rgba(255,255,255,0.85); max-width:600px; margin:0 auto 8px;">
-      Recetas organizadas para desayuno, almuerzo, snack y cena, con ingredientes cotidianos y preparaciones sencillas para dejar de improvisar cada comida.
+      Más de 100 recetas organizadas por momento del día para dejar de improvisar y armar platos simples, ricos y fáciles de sostener.
     </p>
 
     <div class="hero-grid">
@@ -435,6 +499,10 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
       <img src="food-4.webp" width="340" height="386" alt="Tostada integral con palta y tomate" loading="lazy">
       <img src="food-5.webp" width="340" height="384" alt="Bowl de pollo con arroz, huevo y vegetales" loading="lazy">
       <img src="food-6.webp" width="340" height="383" alt="Avena con frutos rojos y frutos secos" loading="lazy">
+    </div>
+
+    <div class="hero-urgency">
+      <div class="hero-urgency-bar"><span class="hero-urgency-dot"></span>Quedan <b>7 cupos</b> a este precio</div>
     </div>
 
     <a class="btn btn-cta" href="https://pay.hotmart.com/B106944825F?off=sq94njl5&checkoutMode=10" onclick="if(window.fbq){fbq('track','InitiateCheckout');}">Quiero Mis Recetas Ahora →</a>
@@ -454,12 +522,12 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
   </div>
   <div class="wrap-wide reveal" style="margin-top:36px;">
     <div class="pain-stack">
-      <div class="pain-row"><span class="pain-num">🚫</span><span class="pain-divider"></span><p><span class="pain-alert">Te dijeron qué no podés comer.</span> Nadie te dijo qué sí — ni cómo armar un plato completo con eso.</p></div>
-      <div class="pain-row"><span class="pain-num">🔍</span><span class="pain-divider"></span><p><span class="pain-alert">Buscaste en internet</span> y encontraste diez respuestas distintas para la misma pregunta. Ninguna te dio certeza.</p></div>
-      <div class="pain-row"><span class="pain-num">⏳</span><span class="pain-divider"></span><p><span class="pain-alert">Probaste alguna dieta genérica.</span> Duró lo que dura la motivación: unas semanas.</p></div>
-      <div class="pain-row"><span class="pain-num">🥱</span><span class="pain-divider"></span><p><span class="pain-alert">El cansancio y la pesadez</span> después de comer se volvieron parte de tu rutina — y ya ni te preguntás si se puede cambiar.</p></div>
-      <div class="pain-row"><span class="pain-num">⚠️</span><span class="pain-divider"></span><p><span class="pain-alert">Te preocupa lo que puede pasar si seguís así.</span> No porque seas alarmista — porque el grado 1 es la etapa en la que el hígado todavía te está dando tiempo. Y el tiempo, si no lo usás, no te avisa cuando se termina.</p></div>
-      <div class="pain-row"><span class="pain-num">🔁</span><span class="pain-divider"></span><p><span class="pain-alert">No querés cocinar dos veces</span> — una comida para vos, otra para el resto de la casa.</p></div>
+      <div class="pain-row"><span class="pain-x">✕</span><span class="pain-divider"></span><div class="pain-text"><b class="pain-title">Te dijeron qué no podés comer</b><p>Nadie te dijo qué sí — ni cómo armar un plato completo con eso.</p></div></div>
+      <div class="pain-row"><span class="pain-x">✕</span><span class="pain-divider"></span><div class="pain-text"><b class="pain-title">Buscaste en internet</b><p>Encontraste diez respuestas distintas para la misma pregunta. Ninguna te dio certeza.</p></div></div>
+      <div class="pain-row"><span class="pain-x">✕</span><span class="pain-divider"></span><div class="pain-text"><b class="pain-title">Comprás y después no usás</b><p>La falta de un plan te hace gastar en ingredientes que quedan dando vueltas o no combinan con lo que venís haciendo.</p></div></div>
+      <div class="pain-row"><span class="pain-x">✕</span><span class="pain-divider"></span><div class="pain-text"><b class="pain-title">No querés recetas complicadas ni largas</b><p>Si la cocina te lleva horas, no se sostiene. Necesitás algo práctico y alcanzable.</p></div></div>
+      <div class="pain-row"><span class="pain-x">✕</span><span class="pain-divider"></span><div class="pain-text"><b class="pain-title">Te preocupa lo que puede pasar si seguís así</b><p>No porque seas alarmista — porque el grado 1 es la etapa en la que el hígado todavía te está dando tiempo. Y el tiempo, si no lo usás, no te avisa cuando se termina.</p></div></div>
+      <div class="pain-row"><span class="pain-x">✕</span><span class="pain-divider"></span><div class="pain-text"><b class="pain-title">No querés cocinar dos veces</b><p>Una comida para vos, otra para el resto de la casa.</p></div></div>
     </div>
     <div class="divider-heart"><span></span>♥<span></span></div>
     <p style="text-align:center; font-size:22px; font-weight:700; color:#201d18;">No es que te falte disciplina.<br>Es que nadie te dio <span class="accent-italic" style="text-decoration:underline; text-underline-offset:5px;">un plan real.</span><br>Y un diagnóstico sin plan no es información — es una alarma que suena y que nadie te enseñó a apagar.</p>
@@ -477,16 +545,36 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
     <div>
       <div class="label">La solución</div>
       <h2 class="solution-title">No es otra dieta.<br><span class="accent-italic">Es el plan que faltaba.</span></h2>
-      <p style="font-size:16px; line-height:1.7; color:#4a433b; margin-bottom:20px;">
-        Todos saben que hay que "comer bien" para cuidar el hígado. Pero casi nadie te explica qué significa eso en tu plato, comida por comida. <b>Hígado en Equilibrio</b> es exactamente eso: un recetario creado por una nutricionista, con +100 recetas organizadas para que sepas qué cocinar hoy — sin improvisar y sin gastar de más.
-      </p>
-      <div style="display:flex; flex-direction:column; gap:10px;">
-        <div class="feature-pill"><span class="feature-icon">☀️</span><span>Recetas organizadas por momento del día — desayuno, almuerzo, snack y cena.</span></div>
-        <div class="feature-pill"><span class="feature-icon">✓</span><span>Guía práctica de alimentos y combinaciones para armar cada comida sin dudas.</span></div>
-        <div class="feature-pill"><span class="feature-icon">🕐</span><span>Preparaciones simples de menos de 30 minutos, sin complicaciones.</span></div>
-        <div class="feature-pill"><span class="feature-icon">🧺</span><span>Ingredientes que ya conseguís en cualquier supermercado.</span></div>
-        <div class="feature-pill"><span class="feature-icon">👥</span><span>Apto para toda la familia — no cocinás dos comidas distintas.</span></div>
-        <div class="feature-pill"><span class="feature-icon">📖</span><span>Explicación del porqué de cada receta, para que aprendas y decidas.</span></div>
+      <div class="steps-inline-wrap">
+        <b class="steps-lead">Te ayuda desde el primer día</b>
+        <p class="steps-sub">En simples pasos</p>
+        <div class="steps-6-inline">
+          <div class="step-item">
+            <div class="step-icon-wrap"><div class="step-icon">⏰</div><span class="step-num">1</span></div>
+            <div class="step-title">Elegís el momento del día</div>
+            <p class="step-text">Directo a desayunos, almuerzos, snacks o cenas, sin perder tiempo.</p>
+          </div>
+          <div class="step-item">
+            <div class="step-icon-wrap"><div class="step-icon">📖</div><span class="step-num">2</span></div>
+            <div class="step-title">Preparás con recetas claras</div>
+            <p class="step-text">Preparaciones simples de menos de 30 minutos, sin complicaciones.</p>
+          </div>
+          <div class="step-item">
+            <div class="step-icon-wrap"><div class="step-icon">🧺</div><span class="step-num">3</span></div>
+            <div class="step-title">Ingredientes de siempre</div>
+            <p class="step-text">Ya los conseguís en cualquier supermercado.</p>
+          </div>
+          <div class="step-item">
+            <div class="step-icon-wrap"><div class="step-icon">👥</div><span class="step-num">4</span></div>
+            <div class="step-title">Apto para toda la familia</div>
+            <p class="step-text">No cocinás dos comidas distintas.</p>
+          </div>
+          <div class="step-item">
+            <div class="step-icon-wrap"><div class="step-icon">✨</div><span class="step-num">5</span></div>
+            <div class="step-title">Repetís lo que te funciona</div>
+            <p class="step-text">Ajustás según tus días, con comidas ricas y sostenibles.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -508,10 +596,7 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
           Emily Carter es Licenciada en Nutrición, con <span style="color:#b9601b; font-weight:700;">+15 años</span> de experiencia en consulta clínica.
         </p>
         <p style="font-size:16px; line-height:1.75; color:#3f3a34;">
-          Vio la misma escena repetirse una y otra vez: alguien llega con el diagnóstico en la mano y sale con una lista de prohibiciones, pero sin un plan real para el día a día.
-        </p>
-        <p style="font-size:16px; line-height:1.75; color:#3f3a34;">
-          Ese fue el punto de partida de este recetario. No una dieta genérica bajada de internet — un plan pensado desde la práctica clínica, comida por comida, para que dejes de improvisar.
+          No es una dieta genérica bajada de internet — es un plan pensado desde la práctica clínica, comida por comida, para que dejes de improvisar.
         </p>
         <p class="emily-quote" style="font-family:'Bodoni Moda', serif; font-style:italic; font-size:17px; line-height:1.7; color:#b9601b; background:linear-gradient(135deg,#fff3e2,#fce8d4); border-left:4px solid #e79a3d; border-radius:0 12px 12px 0; padding:18px 20px; margin-top:20px;">"Aprendí que las personas no necesitan más reglas: necesitan una forma sencilla de cuidar su alimentación sin poner su vida patas arriba. Este recetario nació para demostrar que comer mejor también puede ser rico, familiar y posible."<br><span style="font-style:normal; font-weight:700; color:#1d4527; font-family:'Inter',sans-serif; font-size:14px;">— Emily Carter</span></p>
       </div>
@@ -525,33 +610,34 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
 <section class="section section-peach">
   <div class="wrap reveal">
     <div class="label">✨ Lo que vas a lograr</div>
-    <h2>¿Qué cambia cuando seguís<br>un plan pensado <span class="accent-italic">para tu hígado?</span></h2>
+    <h2>¿Qué cambia en tu cuerpo <br>cuando tu hígado <span class="accent-italic">deja de estar saturado?</span></h2>
+    <p style="color:#6b6357; font-size:15px; max-width:480px; margin:10px auto 0; line-height:1.6;">Beneficios reales que nuestros lectores notan en las primeras semanas:</p>
     <div class="divider-mini"></div>
   </div>
   <div class="wrap-wide reveal" style="margin-top:12px;">
     <div class="grid2" style="max-width:800px; margin:0 auto;">
       <div class="lov-card2">
-        <div class="lov-row2"><div class="lov-icon2">⚡</div><div><div class="lov-title-row"><span class="lov-num2">1</span><b>Más energía</b></div><p>Sentí la diferencia desde los primeros días, sin bajones a media tarde.</p></div></div>
+        <div class="lov-row2"><div class="lov-icon2">⚡</div><div><div class="lov-title-row"><span class="lov-num2">1</span><b>La energía que no sabías que te estaba faltando</b></div><p>El cansancio de las 4 de la tarde no siempre es falta de sueño. A veces es un hígado saturado. Cuando mejora, lo notás en que llegás al final del día sin arrastrarte.</p></div></div>
         <div class="lov-divider2">🌿</div>
       </div>
       <div class="lov-card2">
-        <div class="lov-row2"><div class="lov-icon2">🌱</div><div><div class="lov-title-row"><span class="lov-num2">2</span><b>Menos hinchazón</b></div><p>Digestión más liviana y adiós a la pesadez después de comer.</p></div></div>
+        <div class="lov-row2"><div class="lov-icon2">⚖️</div><div><div class="lov-title-row"><span class="lov-num2">2</span><b>No comés menos. Tu cuerpo por fin procesa lo que comés</b></div><p>Si tu hígado está saturado, tu metabolismo trabaja con el freno puesto. No era falta de voluntad. Era eso.</p></div></div>
         <div class="lov-divider2">🌿</div>
       </div>
       <div class="lov-card2">
-        <div class="lov-row2"><div class="lov-icon2">💡</div><div><div class="lov-title-row"><span class="lov-num2">3</span><b>Un plan claro, no más dudas</b></div><p>Cada comida ya tiene su respuesta resuelta, sin improvisar.</p></div></div>
+        <div class="lov-row2"><div class="lov-icon2">🩺</div><div><div class="lov-title-row"><span class="lov-num2">3</span><b>Tu próximo análisis, mirado distinto</b></div><p>Transaminasas, triglicéridos. Números que antes ignorabas. Ahora van a ser la prueba de que lo que hacés, funciona.</p></div></div>
         <div class="lov-divider2">🌿</div>
       </div>
       <div class="lov-card2">
-        <div class="lov-row2"><div class="lov-icon2">🥗</div><div><div class="lov-title-row"><span class="lov-num2">4</span><b>Comé rico, sin culpa</b></div><p>Recetas sabrosas que disfrutás y podés sostener en el tiempo.</p></div></div>
+        <div class="lov-row2"><div class="lov-icon2">😌</div><div><div class="lov-title-row"><span class="lov-num2">4</span><b>Esa hinchazón que "siempre tuviste" quizás no era normal</b></div><p>La asumiste como parte de vos. Cuando baja, entendés que era tu hígado pidiendo ayuda.</p></div></div>
         <div class="lov-divider2">🌿</div>
       </div>
       <div class="lov-card2">
-        <div class="lov-row2"><div class="lov-icon2">👨‍👩‍👧</div><div><div class="lov-title-row"><span class="lov-num2">5</span><b>Toda la familia come igual</b></div><p>Un solo menú, sin negociaciones ni comidas distintas.</p></div></div>
+        <div class="lov-row2"><div class="lov-icon2">😋</div><div><div class="lov-title-row"><span class="lov-num2">5</span><b>Comer rico sin culpa</b></div><p>No hay privación. Hay comida que disfrutás mientras trabaja a tu favor.</p></div></div>
         <div class="lov-divider2">🌿</div>
       </div>
       <div class="lov-card2">
-        <div class="lov-row2"><div class="lov-icon2">🎯</div><div><div class="lov-title-row"><span class="lov-num2">6</span><b>Control de tu proceso</b></div><p>Vas a entender el porqué de cada receta, para decidir con criterio.</p></div></div>
+        <div class="lov-row2"><div class="lov-icon2">🧠</div><div><div class="lov-title-row"><span class="lov-num2">6</span><b>Control total sobre tu salud</b></div><p>Por primera vez sabés qué le hace bien a tu hígado y qué no. Eso ya no depende de suerte ni de dietas de moda.</p></div></div>
         <div class="lov-divider2">🌿</div>
       </div>
     </div>
@@ -586,17 +672,15 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
       <div class="content-row2-body"><div class="content-title-row"><span class="content-num2">04</span><b>Cenas Livianas</b></div><p>Recetas suaves que ayudan a descansar mejor.</p></div>
     </div>
     <div class="content-row2 content-bonus2">
-      <img src="meal-bonus.webp" width="335" height="162" alt="Guía de compras y alimentos" loading="lazy">
-      <div class="content-row2-body"><div class="content-title-row"><span class="content-num2">05</span><b>Guía práctica de alimentos y combinaciones para armar cada comida sin dudas</b></div><p>+ Lista de compras semanal descargable</p></div>
+      <img class="content-thumb-small" src="lista-compras-thumb.webp" width="300" height="300" alt="Lista de compras semanal descargable" loading="lazy">
+      <div class="content-row2-body"><p>+ Lista de compras semanal descargable. La decisión ya está tomada antes de que entres al súper.</p></div>
     </div>
     <div class="content-row2 content-bonus2">
-      <div class="whatsapp-icon-slot">
-        <svg width="40" height="40" viewBox="0 0 448 512" fill="#fff" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
-      </div>
+      <img class="content-thumb-small" src="whatsapp-comunidad-thumb.webp" width="300" height="300" alt="Comunidad privada de WhatsApp" loading="lazy">
       <div class="content-row2-body">
         <div style="font-size:11px; font-weight:800; color:#b9601b; text-transform:uppercase; letter-spacing:0.4px; margin-bottom:5px;">Acceso exclusivo incluido</div>
-        <div class="content-title-row"><span class="content-num2">🎁</span><b>La Mesa en Equilibrio™</b></div>
-        <p style="margin:3px 0 0;">Nuestra comunidad privada de WhatsApp</p>
+        <div class="content-title-row"><span class="content-num2">🍽️</span><b>La Mesa en Equilibrio™</b></div>
+        <p style="margin:3px 0 0;">Un grupo privado de WhatsApp para las dudas que aparecen a mitad de semana, no solo el día que compraste.</p>
       </div>
     </div>
     <p style="text-align:center; color:#8a7f73; font-size:13.5px; font-weight:600; margin-top:6px;">Todo organizado para que no tengas que decidir desde cero en cada comida.</p>
@@ -693,19 +777,19 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
       <div class="testi-card">
         <div class="testi-kicker-badge">"De 72 a 38 en ocho semanas. Sin dietas de castigo."</div>
         <div class="testi-stars">★★★★★</div>
-        <div class="testi-text">"Me diagnosticaron hígado graso grado 2, con transaminasas en 72, y no sabía por dónde empezar. Comencé organizando desayunos, cenas y mis compras para dejar de improvisar. Ocho semanas después, mis transaminasas bajaron a 38. Más allá de los resultados, descubrí que podía organizar mi alimentación sin comer platos aburridos ni buscar ingredientes difíciles."</div>
+        <div class="testi-text">"Me diagnosticaron hígado graso grado 2, transaminasas en 72. Empecé por lo simple: dejar de improvisar desayunos, cenas y compras. Ocho semanas después, 38. Lo que más me sorprendió no fue el número. Fue descubrir que organizar no era sinónimo de comer aburrido."</div>
         <div class="testi-author"><div class="testi-avatar">ML</div><div><div class="testi-name">Mariana López Vega · 48 años</div><div class="testi-loc">Córdoba</div></div></div>
       </div>
       <div class="testi-card">
-        <div class="testi-kicker-badge">"365 de triglicéridos. Y encima, la mesa dividida en dos todas las noches."</div>
+        <div class="testi-kicker-badge">"365 de triglicéridos. Y la mesa dividida en dos todas las noches."</div>
         <div class="testi-stars">★★★★★</div>
-        <div class="testi-text">"Me diagnosticaron hígado graso y tenía los triglicéridos en 365. Había probado varias dietas, pero ninguna funcionaba porque tenía que cocinar diferente para mi familia. Con el plan de cuatro semanas empezamos a comer los mismos platos en casa. En siete semanas bajé 5 kilos sin pasar hambre. Lo que más cambió mi rutina fue la lista de compras: ahora sé exactamente qué necesito para toda la semana."</div>
+        <div class="testi-text">"Ya había probado varias dietas. Todas fallaban por lo mismo: cocinar distinto para mí que para mi familia. Con el plan de cuatro semanas empezamos a comer los mismos platos en casa. Bajé 5 kilos en siete semanas sin pasar hambre. Pero lo que me sostiene no fue el kilaje. Fue la lista de compras: ahora sé exactamente qué necesito."</div>
         <div class="testi-author"><div class="testi-avatar">DM</div><div><div class="testi-name">Daniel Méndez Ríos · 52 años</div><div class="testi-loc">Bogotá</div></div></div>
       </div>
       <div class="testi-card">
-        <div class="testi-kicker-badge">"Hinchada, cansada, y comiendo cualquier cosa a las seis de la tarde. Todos los días."</div>
+        <div class="testi-kicker-badge">"Hinchada, cansada, comiendo cualquier cosa a las seis de la tarde. Todos los días."</div>
         <div class="testi-stars">★★★★★</div>
-        <div class="testi-text">"Me sentía hinchada, cansada y llegaba a la tarde con tanta hambre que terminaba comiendo cualquier cosa. Empecé con la sección de snacks y cenas rápidas, sin complicarme. Desde la segunda semana dejé de llegar desesperada a la noche, la hinchazón empezó a disminuir y, lo más importante, dejé de abrir la heladera sin saber qué cocinar. En mi siguiente control, el profesional que me acompaña confirmó una evolución favorable y me recomendó seguir por ese camino."</div>
+        <div class="testi-text">"Llegaba a la tarde con tanta hambre que comía lo primero que encontraba. Empecé por la sección de snacks y cenas rápidas. Desde la segunda semana dejé de llegar desesperada, la hinchazón bajó, y dejé de abrir la heladera sin saber qué cocinar. No era falta de voluntad. Era un plan."</div>
         <div class="testi-author"><div class="testi-avatar">GS</div><div><div class="testi-name">Gabriela Suárez Molina · 45 años</div><div class="testi-loc">La Plata</div></div></div>
       </div>
     </div>
