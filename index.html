@@ -364,6 +364,12 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
     box-shadow: 0 8px 20px rgba(217,43,43,0.4);
   }
   @media (max-width: 700px) { .price-badge-lg { font-size: 16px; padding: 6px 12px; } }
+  .offer-limited-badge {
+    display: inline-flex; align-items: center; gap: 7px;
+    background: linear-gradient(135deg, #ff6a5b 0%, #d92b2b 100%); color: #fff; font-weight: 800;
+    font-size: 13.5px; letter-spacing: 0.3px; padding: 8px 18px; border-radius: 999px;
+    box-shadow: 0 8px 20px rgba(217,43,43,0.35); margin: 0 0 14px;
+  }
   .countdown { display: grid; grid-template-columns: repeat(2, 66px); gap: 8px; justify-content: center; margin: 18px 0; }
   .time-box { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); border-radius: 12px; padding: 10px 4px; text-align: center; }
   .time-box span { display: block; font-size: 21px; font-weight: 900; color: #ffc93c; }
@@ -698,7 +704,7 @@ src="https://www.facebook.com/tr?id=1279130367528979&ev=PageView&noscript=1"
     <div class="offer-content">
       <div class="label">Oferta de lanzamiento</div>
       <h2>Accedé hoy a <span style="color:#ffc93c;">Hígado en Equilibrio</span></h2>
-      <p style="color:rgba(255,255,255,0.8); font-size:16px; margin-bottom:6px;">No es el precio final. Es el precio de lanzamiento — y el que baja es el reloj, no la calidad.</p>
+      <div class="offer-limited-badge">⏳ Oferta por tiempo limitado</div>
       <p style="color:rgba(255,255,255,0.65); font-size:14px; max-width:480px; margin:0 auto 18px; line-height:1.55;">Una sola consulta con nutricionista particular puede costarte mucho más que esto — y no te da el plan completo, comida por comida, para sostener en el tiempo.</p>
 
       <div class="price-row">
