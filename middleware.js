@@ -33,9 +33,9 @@ export default async function middleware(request) {
   let html = await origen.text();
 
   html = html
-    .replaceAll('Precio normal: $79.900', 'Precio normal: $520 MXN')
-    .replaceAll('Después vuelve a $79.900.', 'Después vuelve a $520 MXN.')
-    .replaceAll('$39.900', '$260 MXN');
+    .replaceAll('Precio normal: $159.600', 'Precio normal: $868 MXN')
+    .replaceAll('Después vuelve a $159.600.', 'Después vuelve a $868 MXN.')
+    .replaceAll('$39.900', '$217 MXN');
   // El link de Hotmart NO se toca — mismo link para los dos países,
   // Hotmart ya convierte solo según la IP del comprador.
 
